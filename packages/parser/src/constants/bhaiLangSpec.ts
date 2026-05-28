@@ -1,27 +1,27 @@
 export const TokenTypes = {
   NULL_TYPE: null,
 
-  HI_BHAI_TYPE: "hi bro",
+  PROGRAM_START_TYPE: "hi bro",
 
-  BYE_BHAI_TYPE: "bye bro",
+  PROGRAM_END_TYPE: "bye bro",
 
-  BOL_BHAI_TYPE: "say bro",
+  PRINT_TYPE: "say bro",
 
-  BHAI_YE_HAI_TYPE: "bro this is",
+  VAR_DECL_TYPE: "bro this is",
 
-  AGAR_BHAI: "if bro",
+  IF_TYPE: "if bro",
 
-  WARNA_BHAI: "else bro",
+  ELSE_TYPE: "else bro",
 
-  NAHI_TO_BHAI: "else if bro",
+  ELSE_IF_TYPE: "else if bro",
 
-  JAB_TAK_BHAI: "while bro",
+  WHILE_TYPE: "while bro",
 
-  BAS_KAR_BHAI: "stop bro",
+  BREAK_TYPE: "stop bro",
 
-  AGLA_DEKH_BHAI: "next bro",
+  CONTINUE_TYPE: "next bro",
 
-  NALLA_TYPE: "NOPE",
+  NULL_LITERAL_TYPE: "NOPE",
 
   SEMI_COLON_TYPE: ";",
 
@@ -79,17 +79,17 @@ export const SPEC = [
   { regex: /^,/, tokenType: TokenTypes.COMMA_TYPE },
 
   //Keywords
-  { regex: /^\bhi bro\b/, tokenType: TokenTypes.HI_BHAI_TYPE },
-  { regex: /^\bbye bro\b/, tokenType: TokenTypes.BYE_BHAI_TYPE },
-  { regex: /^\bsay bro\b/, tokenType: TokenTypes.BOL_BHAI_TYPE },
-  { regex: /^\bbro this is\b/, tokenType: TokenTypes.BHAI_YE_HAI_TYPE },
-  { regex: /^\bif bro\b/, tokenType: TokenTypes.AGAR_BHAI },
-  { regex: /^\belse if bro\b/, tokenType: TokenTypes.NAHI_TO_BHAI },
-  { regex: /^\belse bro\b/, tokenType: TokenTypes.WARNA_BHAI },
-  { regex: /^\bnope\b/, tokenType: TokenTypes.NALLA_TYPE },
-  { regex: /^\bwhile bro\b/, tokenType: TokenTypes.JAB_TAK_BHAI },
-  { regex: /^\bstop bro\b/, tokenType: TokenTypes.BAS_KAR_BHAI },
-  { regex: /^\bnext bro\b/, tokenType: TokenTypes.AGLA_DEKH_BHAI },
+  { regex: /^\bhi bro\b/, tokenType: TokenTypes.PROGRAM_START_TYPE },
+  { regex: /^\bbye bro\b/, tokenType: TokenTypes.PROGRAM_END_TYPE },
+  { regex: /^\bsay bro\b/, tokenType: TokenTypes.PRINT_TYPE },
+  { regex: /^\bbro this is\b/, tokenType: TokenTypes.VAR_DECL_TYPE },
+  { regex: /^\bif bro\b/, tokenType: TokenTypes.IF_TYPE },
+  { regex: /^\belse if bro\b/, tokenType: TokenTypes.ELSE_IF_TYPE },
+  { regex: /^\belse bro\b/, tokenType: TokenTypes.ELSE_TYPE },
+  { regex: /^\bnope\b/, tokenType: TokenTypes.NULL_LITERAL_TYPE },
+  { regex: /^\bwhile bro\b/, tokenType: TokenTypes.WHILE_TYPE },
+  { regex: /^\bstop bro\b/, tokenType: TokenTypes.BREAK_TYPE },
+  { regex: /^\bnext bro\b/, tokenType: TokenTypes.CONTINUE_TYPE },
 
   // Number
   { regex: /^[+-]?([\d]*[.])?[\d]+/, tokenType: TokenTypes.NUMBER_TYPE },

@@ -60,14 +60,14 @@ export default class Scope {
     }
 
     throw new RuntimeException(
-      `Variable "${identifier}" bana to le pehle fir assign karna.`
+      `Variable "${identifier}" must be declared before assignment.`
     );
   }
 
   declare(identifier: string, value: unknown) {
     if (this._variables.has(identifier)) {
       throw new RuntimeException(
-        `Variable "${identifier}" pehle se exist karta hai bhai. Check karle.`
+        `Variable "${identifier}" already exists. Check again.`
       );
     }
 

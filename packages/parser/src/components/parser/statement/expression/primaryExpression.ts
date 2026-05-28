@@ -19,7 +19,7 @@ export default class PrimaryExpression extends Expression {
       case TokenTypes.NUMBER_TYPE:
       case TokenTypes.BOOLEAN_TYPE:
         return Literal.getLiteralImpl(token.type).getLiteral();
-      case TokenTypes.NALLA_TYPE:
+      case TokenTypes.NULL_LITERAL_TYPE:
         return this._getNallaLiteral();
       default:
         return this._getLeftHandSideExpression();
@@ -27,8 +27,8 @@ export default class PrimaryExpression extends Expression {
   }
 
   private _getNallaLiteral() {
-    this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.NALLA_TYPE);
-    return Literal.getLiteralImpl(TokenTypes.NALLA_TYPE).getLiteral();
+    this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.NULL_LITERAL_TYPE);
+    return Literal.getLiteralImpl(TokenTypes.NULL_LITERAL_TYPE).getLiteral();
   }
 
   private _getLeftHandSideExpression() {

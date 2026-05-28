@@ -10,12 +10,12 @@ export default function Docs() {
   return (
     <div className="bg-background">
       <Head>
-        <title>Bro-lang - A toy programming language based on an inside joke</title>
-        <meta property="og:title" content="Bro-lang - A toy programming language based on an inside joke" key="title" />
+        <title>Bro-lang - A toy programming language</title>
+        <meta property="og:title" content="Bro-lang - A toy programming language" key="title" />
         <meta property="og:type" content="website" key="type" />
         <meta property="og:url" content="https://bhailang.js.org" key="url" />
-        <meta property="og:description" content="Bro-lang is a dynamically typed toy programming language, based on an inside joke, written in Typescript. Created by Aniket Singh and Rishabh Tripathi." key="description" />
-        <meta name="description" content="Bro-lang is a dynamically typed toy programming language, based on an inside joke, written in Typescript. Created by Aniket Singh and Rishabh Tripathi." />
+        <meta property="og:description" content="Bro-lang is a dynamically typed toy programming language, written in Typescript. Created by Arijit Biswas." key="description" />
+        <meta name="description" content="Bro-lang is a dynamically typed toy programming language, written in Typescript. Created by Arijit Biswas." />
         <meta property="og:site_name" content="Bro-lang Documentation" key="siteName" />
       </Head>
       <Header />

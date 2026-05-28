@@ -15,16 +15,16 @@ export default class InitStatement extends Statement {
   }
 
   getStatement(): ASTNode {
-    this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.HI_BHAI_TYPE);
+    this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.PROGRAM_START_TYPE);
 
     this._tokenExecutor.eatOptionalSemiColonToken();
 
     const body =
-      this._tokenExecutor.getLookahead()?.type !== TokenTypes.BYE_BHAI_TYPE
-        ? this._statementList.getStatementList(TokenTypes.BYE_BHAI_TYPE)
+      this._tokenExecutor.getLookahead()?.type !== TokenTypes.PROGRAM_END_TYPE
+        ? this._statementList.getStatementList(TokenTypes.PROGRAM_END_TYPE)
         : [];
 
-    this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.BYE_BHAI_TYPE);
+    this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.PROGRAM_END_TYPE);
 
     this._tokenExecutor.eatOptionalSemiColonToken();
 

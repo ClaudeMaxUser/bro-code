@@ -1,4 +1,4 @@
-import NallaPointerException from "../../src/exceptions/nallaPointerException";
+import NullPointerException from "../../src/exceptions/nullPointerException";
 import bhaiLangModule from "../../src/module/bhaiLangModule";
 
 import {
@@ -19,7 +19,7 @@ type posTestObjType = typeof StatementTests[0];
 type negTestObjType = {
   name: string;
   input: string;
-  output: SyntaxErrorConstructor | typeof NallaPointerException;
+  output: SyntaxErrorConstructor | typeof NullPointerException;
 };
 
 StatementTests.forEach((testCase) => {

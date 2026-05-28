@@ -4,20 +4,20 @@ import InvalidStateException from "../../src/exceptions/invalidStateException";
 
 const tokenizer = new TokenizerImpl(SPEC);
 
-test("test Tokenizer.getNextToken with HI_BHAI_TYPE should success", () => {
+test("test Tokenizer.getNextToken with PROGRAM_START_TYPE should success", () => {
   tokenizer.initTokenizer(`hi bro`);
 
   expect(tokenizer.getNextToken()).toStrictEqual({
-    type: TokenTypes.HI_BHAI_TYPE,
+    type: TokenTypes.PROGRAM_START_TYPE,
     value: "hi bro",
   });
 });
 
-test("test Tokenizer.getNextToken with BYE_BHAI_TYPE should success", () => {
+test("test Tokenizer.getNextToken with PROGRAM_END_TYPE should success", () => {
   tokenizer.initTokenizer(`bye bro`);
 
   expect(tokenizer.getNextToken()).toStrictEqual({
-    type: TokenTypes.BYE_BHAI_TYPE,
+    type: TokenTypes.PROGRAM_END_TYPE,
     value: "bye bro",
   });
 });

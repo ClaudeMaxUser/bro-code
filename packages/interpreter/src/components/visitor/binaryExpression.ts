@@ -2,7 +2,7 @@ import Visitor from ".";
 import { ASTNode, NodeType } from "bhai-lang-parser";
 
 import InvalidStateException from "../../exceptions/invalidStateException";
-import NallaPointerException from "../../exceptions/nallaPointerException";
+import NullPointerException from "../../exceptions/nullPointerException";
 import RuntimeException from "../../exceptions/runtimeException";
 import { getOperationValue } from "../../helpers";
 import InterpreterModule from "../../module/interpreterModule";
@@ -48,7 +48,7 @@ export default class BinaryExpression implements Visitor {
       );
     }
 
-    const nallaException = new NallaPointerException(
+    const nullException = new NullPointerException(
       `Null operand doesn't work with "${node.operator}"`
     );
 
@@ -56,16 +56,16 @@ export default class BinaryExpression implements Visitor {
       node.left.type === NodeType.NullLiteral ||
       node.right.type === NodeType.NullLiteral
     )
-      throw nallaException;
+      throw nullException;
 
     if (node.left.type === NodeType.IdentifierExpression && node.left.name) {
       const value = InterpreterModule.getCurrentScope().get(node.left.name);
-      if (value === null) throw nallaException;
+      if (value === null) throw nullException;
     }
 
     if (node.right.type === NodeType.IdentifierExpression && node.right.name) {
       const value = InterpreterModule.getCurrentScope().get(node.right.name);
-      if (value === null) throw nallaException;
+      if (value === null) throw nullException;
     }
   }
 

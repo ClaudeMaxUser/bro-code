@@ -1,5 +1,5 @@
 import { RuntimeException } from "../../src";
-import NallaPointerException from "../../src/exceptions/nallaPointerException";
+import NullPointerException from "../../src/exceptions/nullPointerException";
 
 
 export const NegativeTestCases = [
@@ -186,7 +186,7 @@ export const NegativeTestCases = [
       say bro a + 9;
       bye bro;
     `,
-    exception: NallaPointerException,
+    exception: NullPointerException,
   },
   {
     name: "interpreter use nope variable in expression - 2, should throw an exception",
@@ -196,7 +196,7 @@ export const NegativeTestCases = [
       say bro a + 9;
       bye bro;
     `,
-    exception: NallaPointerException,
+    exception: NullPointerException,
   },
   {
     name: "interpreter use nope in variable initialisation expression, should throw an exception",
@@ -205,7 +205,7 @@ export const NegativeTestCases = [
       bro this is a = nope + 80;
       bye bro;
     `,
-    exception: NallaPointerException,
+    exception: NullPointerException,
   },
   {
     name: "interpreter use nope in variable initialisation expression - 2, should throw an exception",
@@ -214,7 +214,7 @@ export const NegativeTestCases = [
       bro this is a = nope + "jam";
       bye bro;
     `,
-    exception: NallaPointerException,
+    exception: NullPointerException,
   },
   {
     name: "interpreter use nope variable in another variable initialisation expression, should throw an exception",
@@ -224,7 +224,7 @@ export const NegativeTestCases = [
       bro this is b = a + "hello";
       bye bro;
     `,
-    exception: NallaPointerException,
+    exception: NullPointerException,
   },
   {
     name: "interpreter use nope variable in complex expression, should throw an exception",
@@ -234,7 +234,7 @@ export const NegativeTestCases = [
       bro this is b = ((a*9) * a + "hello");
       bye bro;
     `,
-    exception: NallaPointerException,
+    exception: NullPointerException,
   },
   // yep - nah case
   {
@@ -304,7 +304,7 @@ export const NegativeTestCases = [
         (nope * (4 + 8 + 10));
         bye bro
       `,
-    output: NallaPointerException,
+    output: NullPointerException,
   },
   {
     name: "complex expression test with one null operand and one boolean operand, should throw an exception",
@@ -322,7 +322,7 @@ export const NegativeTestCases = [
         (yep * (nope + 8 + 10));
         bye bro
       `,
-    output: NallaPointerException,
+    output: NullPointerException,
   },
   {
     name: "complex expression test with one null operand and one boolean operand - 3, should throw nope pointer exception",
@@ -331,7 +331,7 @@ export const NegativeTestCases = [
         (nope + yep);
         bye bro
       `,
-    output: NallaPointerException,
+    output: NullPointerException,
   },
   {
     name: "complex expression test with one boolean operand, should throw an exception",
@@ -406,7 +406,7 @@ export const NegativeTestCases = [
         say bro nope + 5;
         bye bro;
       `,
-    output: NallaPointerException,
+    output: NullPointerException,
   },
   {
     name: "complex assign test with expression containing nope, should throw an exception",
@@ -416,7 +416,7 @@ export const NegativeTestCases = [
         a *= 5;
         bye bro;
       `,
-    output: NallaPointerException,
+    output: NullPointerException,
   },
   {
     name: "complex assign test with expression containing yep, should throw an exception",
@@ -426,7 +426,7 @@ export const NegativeTestCases = [
         a *= 5;
         bye bro;
       `,
-    output: NallaPointerException,
+    output: NullPointerException,
   },
   {
     name: "complex assign test with expression containing nope - 2, should throw an exception",
@@ -436,7 +436,7 @@ export const NegativeTestCases = [
         a /= 5;
         bye bro;
       `,
-    output: NallaPointerException,
+    output: NullPointerException,
   },
   // while loop negative tests
   {
@@ -481,7 +481,7 @@ export const NegativeTestCases = [
         say bro nope && 90;
         bye bro;
       `,
-    output: NallaPointerException,
+    output: NullPointerException,
   },
   {
     name: "use of nope variable with &&, should throw an exception",
@@ -491,7 +491,7 @@ export const NegativeTestCases = [
         say bro a && 90;
         bye bro;
       `,
-    output: NallaPointerException,
+    output: NullPointerException,
   },
   // modulus operator test
   {

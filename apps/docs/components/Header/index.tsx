@@ -32,30 +32,12 @@ export default function Header() {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/DulLabs/bhai-lang"
+                    href="https://github.com/ClaudeMaxUser/bro-code"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-bhagwa-700 bg-bhagwa-300 hover:bg-bhagwa-400 md:py-4 md:text-lg md:px-10"
                   >
                     View Source
                   </a>
                 </div>
-              </div>
-              <div className="text-center text-gray-300 pt-6">
-                Made by
-                <a
-                  href="https://github.com/aniketsingh0104"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="text-bhagwa-700"> @aniketsingh0104 </span>
-                </a>
-                and
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/ristri"
-                >
-                  <span className="text-bhagwa-700"> @ristri</span>
-                </a>
               </div>
             </div>
           </main>
