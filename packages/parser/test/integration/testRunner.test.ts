@@ -1,5 +1,5 @@
 import NullPointerException from "../../src/exceptions/nullPointerException";
-import bhaiLangModule from "../../src/module/bhaiLangModule";
+import broLangModule from "../../src/module/broLangModule";
 
 import {
   IfStatementNagativeTests,
@@ -52,7 +52,7 @@ NegativeExpressionsTests.forEach((testCase) => {
 
 function _runPositiveTests(testCase: posTestObjType) {
   test(testCase.name, () => {
-    const parser = bhaiLangModule.getParser();
+    const parser = broLangModule.getParser();
     const ast = parser.parse(testCase.input);
     expect(JSON.stringify(ast)).toBe(testCase.output);
   });
@@ -60,13 +60,13 @@ function _runPositiveTests(testCase: posTestObjType) {
 
 function _runNegativeTests(testCase: negTestObjType) {
   test(testCase.name, () => {
-    const parser = bhaiLangModule.getParser();
+    const parser = broLangModule.getParser();
     expect(() => parser.parse(testCase.input)).toThrow(testCase.output);
   });
 }
 
 // test("jest test", () => {
-//   const parser = bhaiLangModule.getParser();
+//   const parser = broLangModule.getParser();
 //   console.debug(JSON.stringify(parser.parse(`
 //   hi bhai
 //       bol bhai 9 == 90;

@@ -48,7 +48,7 @@ import { Tokenizer } from "../components/tokenizer/types";
 import { SPEC } from "../constants/bhaiLangSpec";
 
 
-export default class BhaiLangModule {
+export default class BroLangModule {
   private static _tokenizer?: Tokenizer;
   private static _initStatement?: InitStatement;
   private static _parser?: Parser;
