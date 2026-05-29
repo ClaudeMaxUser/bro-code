@@ -1,5 +1,5 @@
 {
-  "name": "bhai-lang",
+  "name": "bro-code",
   "version": "0.0.1",
   "private": true,
   "workspaces": [
@@ -21,7 +21,7 @@
     "typescript": "^4.5.4"
   },
   "keywords": [
-    "bhai-lang",
+    "bro-code",
     "programming language",
     "compiler",
     "parser",

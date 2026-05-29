@@ -1,14 +1,14 @@
-<h1 align="center">Bro Lang</h1>
+<h1 align="center">Bro code</h1>
 
 <p align="center">
-  <b>Bro lang is a toy programming language written in Typescript.</b>
+  <b>Bro code is a toy programming language written in Typescript.</b>
 </p>
 <br>
 
 <h2 align="center">Installation</h2>
 
 ```
-npm i -g bhailang
+npm i -g brocode
 ```
 
 <h2 align="center">Usage</h2>
@@ -17,7 +17,7 @@ npm i -g bhailang
 
 
 <h4 align="left">Edit the file with a text editor.
-You can also try out your code on <a href="https://bhailang.js.org/#playground">Bro Lang PlayGround</a></h4>
+You can also try out your code on <a href="https://bhailang.js.org/#playground">Bro Code PlayGround</a></h4>
 
 ```
 hi bro
@@ -104,7 +104,7 @@ bye bro
 ```
 
 <h3 align="center">Conditionals</h3>
-<p align="center">Bro lang supports simple if else construct , <code>if bro</code> block will execute if condition is <code>yep</code> and <code>else bro</code> block will execute if condition is <code>nah</code>.</p>
+<p align="center">Bro Code supports simple if else construct , <code>if bro</code> block will execute if condition is <code>yep</code> and <code>else bro</code> block will execute if condition is <code>nah</code>.</p>
 
 ```
 

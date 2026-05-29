@@ -64,12 +64,3 @@ function _runNegativeTests(testCase: negTestObjType) {
     expect(() => parser.parse(testCase.input)).toThrow(testCase.output);
   });
 }
-
-// test("jest test", () => {
-//   const parser = broLangModule.getParser();
-//   console.debug(JSON.stringify(parser.parse(`
-//   hi bhai
-//       bol bhai 9 == 90;
-//       bye bhai
-//   `)));
-// })
