@@ -1,5 +1,5 @@
-import { TokenTypes } from "../../../constants/broLangSpec";
-import BroLangModule from "../../../module/broLangModule";
+import { TokenTypes } from "../../../constants/broCodeSpec";
+import BroCodeModule from "../../../module/broCodeModule";
 import { Token } from "../../tokenizer/types";
 import TokenExecutor from "../tokenExecutor";
 import { ASTNode } from "../types/nodeTypes";
@@ -17,31 +17,31 @@ export default abstract class Statement {
   static getStatementImpl(lookahead: Token): Statement {
     switch (lookahead.type) {
       case TokenTypes.PRINT_TYPE:
-        return BroLangModule.getPrintStatement();
+        return BroCodeModule.getPrintStatement();
 
       case TokenTypes.SEMI_COLON_TYPE:
-        return BroLangModule.getEmptyStatement();
+        return BroCodeModule.getEmptyStatement();
 
       case TokenTypes.OPEN_CURLY_BRACE_TYPE:
-        return BroLangModule.getBlockStatement();
+        return BroCodeModule.getBlockStatement();
 
       case TokenTypes.VAR_DECL_TYPE:
-        return BroLangModule.getVariableStatement();
+        return BroCodeModule.getVariableStatement();
 
       case TokenTypes.IF_TYPE:
-        return BroLangModule.getIfStatement();
+        return BroCodeModule.getIfStatement();
 
       case TokenTypes.WHILE_TYPE:
-        return BroLangModule.getWhileStatement();
+        return BroCodeModule.getWhileStatement();
 
       case TokenTypes.BREAK_TYPE:
-        return BroLangModule.getBreakStatement();
+        return BroCodeModule.getBreakStatement();
       
       case TokenTypes.CONTINUE_TYPE:
-        return BroLangModule.getContinueStatement();
+        return BroCodeModule.getContinueStatement();
 
       default:
-        return BroLangModule.getExpressionStatement();
+        return BroCodeModule.getExpressionStatement();
     }
   }
 }

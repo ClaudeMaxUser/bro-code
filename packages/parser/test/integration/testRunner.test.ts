@@ -1,5 +1,5 @@
 import NullPointerException from "../../src/exceptions/nullPointerException";
-import broLangModule from "../../src/module/broLangModule";
+import broCodeModule from "../../src/module/broCodeModule";
 
 import {
   IfStatementNagativeTests,
@@ -52,7 +52,7 @@ NegativeExpressionsTests.forEach((testCase) => {
 
 function _runPositiveTests(testCase: posTestObjType) {
   test(testCase.name, () => {
-    const parser = broLangModule.getParser();
+    const parser = broCodeModule.getParser();
     const ast = parser.parse(testCase.input);
     expect(JSON.stringify(ast)).toBe(testCase.output);
   });
@@ -60,7 +60,7 @@ function _runPositiveTests(testCase: posTestObjType) {
 
 function _runNegativeTests(testCase: negTestObjType) {
   test(testCase.name, () => {
-    const parser = broLangModule.getParser();
+    const parser = broCodeModule.getParser();
     expect(() => parser.parse(testCase.input)).toThrow(testCase.output);
   });
 }

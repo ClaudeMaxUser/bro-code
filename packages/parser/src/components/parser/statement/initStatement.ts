@@ -1,6 +1,6 @@
 import Statement from ".";
 
-import { TokenTypes } from "../../../constants/broLangSpec";
+import { TokenTypes } from "../../../constants/broCodeSpec";
 import { NodeType } from "../../../constants/constants";
 import StatementList from "../statementList";
 import TokenExecutor from "../tokenExecutor";

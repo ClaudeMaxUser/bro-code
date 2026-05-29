@@ -1,4 +1,4 @@
-import { TokenTypes } from "../../constants/broLangSpec";
+import { TokenTypes } from "../../constants/broCodeSpec";
 import { Token, Tokenizer } from "../tokenizer/types";
 
 

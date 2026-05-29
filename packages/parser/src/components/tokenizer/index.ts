@@ -1,4 +1,4 @@
-import { Spec } from "../../constants/broLangSpec";
+import { Spec } from "../../constants/broCodeSpec";
 import InvalidStateException from "../../exceptions/invalidStateException";
 
 import { Token, Tokenizer } from "./types";

@@ -1,5 +1,5 @@
 import { NodeType } from "../../../../constants/constants";
-import BroLangModule from "../../../../module/broLangModule";
+import BroCodeModule from "../../../../module/broCodeModule";
 import TokenExecutor from "../../tokenExecutor";
 import { ASTNode } from "../../types/nodeTypes";
 
@@ -16,34 +16,34 @@ export default abstract class Expression {
   static getExpressionImpl(expressionType: keyof typeof NodeType): Expression {
     switch (expressionType) {
       case NodeType.AdditiveExpression:
-        return BroLangModule.getAdditiveExpression();
+        return BroCodeModule.getAdditiveExpression();
 
       case NodeType.MultiplicativeExpression:
-        return BroLangModule.getMultiplicativeExpression();
+        return BroCodeModule.getMultiplicativeExpression();
 
       case NodeType.PrimaryExpression:
-        return BroLangModule.getPrimaryExpression();
+        return BroCodeModule.getPrimaryExpression();
 
       case NodeType.ParanthesizedExpression:
-        return BroLangModule.getParanthesizedExpression();
+        return BroCodeModule.getParanthesizedExpression();
 
       case NodeType.AssignmentExpression:
-        return BroLangModule.getAssignmentExpression();
+        return BroCodeModule.getAssignmentExpression();
 
       case NodeType.EqualityExpression:
-        return BroLangModule.getEqualityExpression();
+        return BroCodeModule.getEqualityExpression();
 
       case NodeType.LogicalANDExpression:
-        return BroLangModule.getLogicalANDExpression();
+        return BroCodeModule.getLogicalANDExpression();
 
       case NodeType.LogicalORExpression:
-        return BroLangModule.getLogicalORExpression();
+        return BroCodeModule.getLogicalORExpression();
 
       case NodeType.RelationalExpression:
-        return BroLangModule.getRelationalExpression();
+        return BroCodeModule.getRelationalExpression();
 
       default:
-        return BroLangModule.getIndentifierExpression();
+        return BroCodeModule.getIndentifierExpression();
     }
   }
 

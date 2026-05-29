@@ -1,6 +1,6 @@
-import { TokenTypes } from "../../../../../constants/broLangSpec";
+import { TokenTypes } from "../../../../../constants/broCodeSpec";
 import UnsupportedTypeException from "../../../../../exceptions/unsupportedTypeException";
-import BroLangModule from "../../../../../module/broLangModule";
+import BroCodeModule from "../../../../../module/broCodeModule";
 import TokenExecutor from "../../../tokenExecutor";
 import { ASTNode } from "../../../types/nodeTypes";
 
@@ -16,16 +16,16 @@ export default abstract class Literal {
   static getLiteralImpl(tokenType?: string): Literal {
     switch (tokenType) {
       case TokenTypes.NUMBER_TYPE:
-        return BroLangModule.getNumericLiteral();
+        return BroCodeModule.getNumericLiteral();
 
       case TokenTypes.BOOLEAN_TYPE:
-        return BroLangModule.getBooleanLiteral();
+        return BroCodeModule.getBooleanLiteral();
 
       case TokenTypes.STRING_TYPE:
-        return BroLangModule.getStringLiteral();
+        return BroCodeModule.getStringLiteral();
 
       case TokenTypes.NULL_LITERAL_TYPE:
-        return BroLangModule.getNullLiteral();
+        return BroCodeModule.getNullLiteral();
 
       default:
         throw new UnsupportedTypeException(

@@ -1,6 +1,6 @@
 import Expression from ".";
 
-import { TokenTypes } from "../../../../constants/broLangSpec";
+import { TokenTypes } from "../../../../constants/broCodeSpec";
 import { NodeType } from "../../../../constants/constants";
 import { ASTNode } from "../../types/nodeTypes";
 

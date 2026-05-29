@@ -1,9 +1,9 @@
 import Statement from "../../src/components/parser/statement";
 import BlockStatement from "../../src/components/parser/statement/blockStatement";
-import { TokenTypes } from "../../src/constants/broLangSpec";
-import BroLangModule from "../../src/module/broLangModule";
+import { TokenTypes } from "../../src/constants/broCodeSpec";
+import BroCodeModule from "../../src/module/broCodeModule";
 
-jest.mock("../../src/module/broLangModule");
+jest.mock("../../src/module/broCodeModule");
 
 const blockStatementMock = new (<any>(
   BlockStatement
@@ -19,7 +19,7 @@ test("test getStatementImpl of statement class with should success", () => {
     value: "{",
   };
 
-  BroLangModule.getBlockStatement = jest
+  BroCodeModule.getBlockStatement = jest
     .fn()
     .mockReturnValue(blockStatementMock);
 
@@ -27,5 +27,5 @@ test("test getStatementImpl of statement class with should success", () => {
     blockStatementMock
   );
 
-  expect(BroLangModule.getBlockStatement).toHaveBeenCalledTimes(1);
+  expect(BroCodeModule.getBlockStatement).toHaveBeenCalledTimes(1);
 });

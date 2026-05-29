@@ -1,5 +1,5 @@
-import { TokenTypes } from "../../constants/broLangSpec";
-import BroLangModule from "../../module/broLangModule";
+import { TokenTypes } from "../../constants/broCodeSpec";
+import BroCodeModule from "../../module/broCodeModule";
 
 import Statement from "./statement";
 import TokenExecutor from "./tokenExecutor";
@@ -20,7 +20,7 @@ export default class StatementList {
       this._tokenExecutor.eatTokenAndForwardLookahead(lookahead.type);
     }
 
-    return BroLangModule.getInitStatement().getStatement();
+    return BroCodeModule.getInitStatement().getStatement();
   }
 
   getStatementList(stopLookaheadType: string) {
