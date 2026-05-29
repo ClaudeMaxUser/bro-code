@@ -41,14 +41,14 @@ NegativeTestCases.forEach((testCase) => {
 
 test("test redeclaring & printing variables in different scopes", () => {
   expect(() =>
-    interpreter.interpret(`hi bhai;
-    bhai ye hai a = 4;
+    interpreter.interpret(`hi bro;
+    bro this is a = 4;
     {
-      bhai ye hai a = 90;
-      bol bhai a;
+      bro this is a = 90;
+      say bro a;
     }
-    bol bhai a;
-    bye bhai;`)
+    say bro a;
+    bye bro;`)
   ).not.toThrowError();
   expect(console.log).toHaveBeenCalledWith("90");
   expect(console.log).toHaveBeenCalledWith("4");
@@ -56,14 +56,14 @@ test("test redeclaring & printing variables in different scopes", () => {
 
 test("test assigning variable in parent scope", () => {
   expect(() =>
-    interpreter.interpret(`hi bhai;
-    bhai ye hai a = 4;
+    interpreter.interpret(`hi bro;
+    bro this is a = 4;
     {
       a = 90;
-      bol bhai a;
+      say bro a;
     }
-    bol bhai a;
-    bye bhai;`)
+    say bro a;
+    bye bro;`)
   ).not.toThrowError();
   expect(console.log).toHaveBeenCalledWith("90");
   expect(console.log).toHaveBeenCalledWith("90");
@@ -71,13 +71,13 @@ test("test assigning variable in parent scope", () => {
 
 test("test accessing variable in parent scope", () => {
   expect(() =>
-    interpreter.interpret(`hi bhai;
-    bhai ye hai a = 4;
+    interpreter.interpret(`hi bro;
+    bro this is a = 4;
     {
-      bol bhai a;
+      say bro a;
     }
-    bol bhai a;
-    bye bhai;`)
+    say bro a;
+    bye bro;`)
   ).not.toThrowError();
   expect(console.log).toHaveBeenCalledWith("4");
   expect(console.log).toHaveBeenCalledWith("4");
@@ -86,73 +86,73 @@ test("test accessing variable in parent scope", () => {
 test("whileStatement test with 2 times loop, should success", () => {
   expect(() =>
     interpreter.interpret(`
-    hi bhai;
-    bhai ye hai a = 0;
-    jab tak bhai (a < 2) {
-      bol bhai "bhai";
+    hi bro;
+    bro this is a = 0;
+    while bro (a < 2) {
+      say bro "bro";
       a += 1;
     }
-    bye bhai;`)
+    bye bro;`)
   ).not.toThrowError();
-  expect(console.log).toHaveBeenCalledWith("bhai");
-  expect(console.log).toHaveBeenCalledWith("bhai");
+  expect(console.log).toHaveBeenCalledWith("bro");
+  expect(console.log).toHaveBeenCalledWith("bro");
 });
 
 test("whileStatement test with nested loops - 2, should success", () => {
   expect(() =>
     interpreter.interpret(`
-    hi bhai;
-    bhai ye hai a = 0, b = 0;
-    jab tak bhai (a < 2) {
-      jab tak bhai (b < 1) {
-        bol bhai "bhai";
+    hi bro;
+    bro this is a = 0, b = 0;
+    while bro (a < 2) {
+      while bro (b < 1) {
+        say bro "bro";
         b += 1;
       }
       a += 1;
     }
-    bye bhai;
+    bye bro;
     `)
   ).not.toThrowError();
-  expect(console.log).toHaveBeenCalledWith("bhai");
+  expect(console.log).toHaveBeenCalledWith("bro");
 });
 
 test("whileStatement test with nested loops - 3, should success", () => {
   expect(() =>
     interpreter.interpret(`
-    hi bhai;
-    bhai ye hai a = 0;
-    jab tak bhai (a < 2) {
-      bhai ye hai b = 0;
-      jab tak bhai (b < 2) {
-        bol bhai "bhai";
+    hi bro;
+    bro this is a = 0;
+    while bro (a < 2) {
+      bro this is b = 0;
+      while bro (b < 2) {
+        say bro "bro";
         b += 1;
-        agar bhai (b == 1)
-          bas kar bhai;
+        if bro (b == 1)
+          stop bro;
       }
       a += 1;
     }
-    bye bhai;
+    bye bro;
     `)
   ).not.toThrowError();
-  expect(console.log).toHaveBeenCalledWith("bhai");
-  expect(console.log).toHaveBeenCalledWith("bhai");
+  expect(console.log).toHaveBeenCalledWith("bro");
+  expect(console.log).toHaveBeenCalledWith("bro");
 });
 
 
 test("whileStatement test with nested loops - 4, should success", () => {
   expect(() =>
     interpreter.interpret(`
-    hi bhai
-    bhai ye hai a = 0;
-    jab tak bhai (a < 10) {
-      bol bhai a;
+    hi bro
+    bro this is a = 0;
+    while bro (a < 10) {
+      say bro a;
       a += 1;
-      agar bhai (a == 6) {
-        bas kar bhai;
+      if bro (a == 6) {
+        stop bro;
       }
     }
-    bol bhai "done";
-    bye bhai
+    say bro "done";
+    bye bro
     `)
   ).not.toThrowError();
   expect(console.log).toHaveBeenCalledWith("0");
@@ -166,16 +166,16 @@ test("whileStatement test with nested loops - 4, should success", () => {
 test("whileStatement test with nested loops - 5, should success", () => {
   expect(() =>
     interpreter.interpret(`
-    hi bhai
-    bhai ye hai a = 0;
-    jab tak bhai (a < 10) {
-      bol bhai a;
+    hi bro
+    bro this is a = 0;
+    while bro (a < 10) {
+      say bro a;
       a += 1;
-      agar bhai (a == 6)
-        bas kar bhai;
+      if bro (a == 6)
+        stop bro;
     }
-    bol bhai "done";
-    bye bhai
+    say bro "done";
+    bye bro
     `)
   ).not.toThrowError();
   expect(console.log).toHaveBeenCalledWith("0");
@@ -189,59 +189,59 @@ test("whileStatement test with nested loops - 5, should success", () => {
 test("whileStatement test with nested loops - 6, should success", () => {
   expect(() =>
     interpreter.interpret(`
-    hi bhai
-    bhai ye hai a = 0;
-    jab tak bhai (a < 10) {
-      bol bhai a;
+    hi bro
+    bro this is a = 0;
+    while bro (a < 10) {
+      say bro a;
       a += 1;
-      agar bhai (a == 3) {
-        bas kar bhai;
+      if bro (a == 3) {
+        stop bro;
       }
-      bol bhai "2 baar hi chapunga";
+      say bro "only prints twice";
     }
-    bol bhai "done";
-    bye bhai
+    say bro "done";
+    bye bro
     `)
   ).not.toThrowError();
   expect(console.log).toHaveBeenCalledWith("0");
   expect(console.log).toHaveBeenCalledWith("1");
   expect(console.log).toHaveBeenCalledWith("2");
-  expect(console.log).toHaveBeenCalledWith("2 baar hi chapunga");
-  expect(console.log).toHaveBeenCalledWith("2 baar hi chapunga");
+  expect(console.log).toHaveBeenCalledWith("only prints twice");
+  expect(console.log).toHaveBeenCalledWith("only prints twice");
 });
 
 test("whileStatement test with infinite loop, should throw runtime exception after 5000 executions", () => {
   expect(() =>
     interpreter.interpret(`
-    hi bhai
+    hi bro
     
-    jab tak bhai (sahi) {
-      bol bhai "bhai";
+    while bro (yep) {
+      say bro "bro";
     }
-    bye bhai;
+    bye bro;
     
     `)
   ).toThrowError(RuntimeException);
 
   expect(console.log).toHaveBeenCalledTimes(5001);
-  expect(console.log).toHaveBeenCalledWith("bhai");
+  expect(console.log).toHaveBeenCalledWith("bro");
 });
 
 test("if-else ladders one after the other, should be evaluated separately", () => {
   expect(() =>
     interpreter.interpret(`
-    hi bhai
-    bhai ye hai x = 6;
-    agar bhai (x < 5) {
-      bol bhai "x < 5";
-    } nahi to bhai (x < 8) {
-      bol bhai "x < 8";
-    } agar bhai (x < 4) {
-      bol bhai "x < 4";
-    } warna bhai {
-      bol bhai "x > 4";
+    hi bro
+    bro this is x = 6;
+    if bro (x < 5) {
+      say bro "x < 5";
+    } else if bro (x < 8) {
+      say bro "x < 8";
+    } if bro (x < 4) {
+      say bro "x < 4";
+    } else bro {
+      say bro "x > 4";
     }
-    bye bhai;
+    bye bro;
     
     `)
   ).not.toThrowError();
@@ -252,17 +252,17 @@ test("if-else ladders one after the other, should be evaluated separately", () =
 
 // test("jest", () => {
 //     interpreter.interpret(`
-//     hi bhai
-//     bhai ye hai a = 0;
-//     jab tak bhai (a < 10) {
-//       bol bhai a;
+//     hi bro
+//     bro this is a = 0;
+//     while bro (a < 10) {
+//       say bro a;
 //       a += 1;
-//       agar bhai (a == 3) {
-//         bas kar bhai;
+//       if bro (a == 3) {
+//         stop bro;
 //       }
-//       bol bhai "2 baar hi chapunga";
+//       say bro "only prints twice";
 //     }
-//     bol bhai "done";
-//     bye bhai
+//     say bro "done";
+//     bye bro
 //     `);
 // });
