@@ -1,7 +1,7 @@
 import Prism, { languages } from "prismjs";
 
 
-export const bhaiLangSyntax = languages.extend("clike", {
+export const broCodeSyntax = languages.extend("clike", {
   comment: [
     {
       pattern: /(^|[^\\:])\/\/.*/,
@@ -25,4 +25,4 @@ export const bhaiLangSyntax = languages.extend("clike", {
     /[*/%^!=]=?|~|\+[=+]?|-[=-]?|\|[=|]?|&(?:=|&|\^=?)?|>(?:>=?|=)?|<(?:<=?|=|-)?|:=|\.\.\./,
 });
 
-Prism.languages.bhaiLang = bhaiLangSyntax;
+Prism.languages.bhaiLang = broCodeSyntax;

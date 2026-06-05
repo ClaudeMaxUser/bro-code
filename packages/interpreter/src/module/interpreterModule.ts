@@ -1,4 +1,4 @@
-import parser, { NodeType } from "bhai-lang-parser";
+import parser, { NodeType } from "bro-code-parser";
 
 import Interpreter from "../components/interpreter";
 import Scope from "../components/scope";

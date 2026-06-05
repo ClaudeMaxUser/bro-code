@@ -84,7 +84,7 @@ bye bro
     name: "Conditionals",
     description: (
       <>
-        Bro-lang supports if-else-if ladder construct , <code className="language-cpp">if bro</code> block will execute if condition is <code className="language-cpp">yep</code>, otherwise one of the subsequently added <code className="language-cpp">else if bro</code> blocks will execute if their respective condition is <code className="language-cpp">yep</code>, and the <code className="language-cpp">else bro</code> block will eventually execute if all of the above conditions are <code className="language-cpp">nah</code>.
+        Bro-code supports if-else-if ladder construct , <code className="language-cpp">if bro</code> block will execute if condition is <code className="language-cpp">yep</code>, otherwise one of the subsequently added <code className="language-cpp">else if bro</code> blocks will execute if their respective condition is <code className="language-cpp">yep</code>, and the <code className="language-cpp">else bro</code> block will eventually execute if all of the above conditions are <code className="language-cpp">nah</code>.
       </>
     ),
     code: `hi bro
@@ -136,7 +136,7 @@ export default function Documentation() {
             Documentation
           </h2>
           <p className="mt-4 text-gray-300">
-            Bro-lang is a dynamically typed toy programming language, based on an
+            Bro-code is a dynamically typed toy programming language, based on an
             inside joke, written in Typescript.
           </p>
 
