@@ -8,7 +8,7 @@
 <h2 align="center">Installation</h2>
 
 ```
-npm i -g bhailang
+npm i -g brocode
 ```
 
 <h2 align="center">Usage</h2>
@@ -29,7 +29,7 @@ bye bro
 <h4 align="left">Run</h4>
 
 ```
-bhailang test.bro
+brocode test.bro
 ```
 
 <h4 align="left">Output</h4>

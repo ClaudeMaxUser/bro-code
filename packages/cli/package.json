@@ -1,11 +1,11 @@
 {
-  "name": "bhailang",
+  "name": "brocode",
   "version": "0.1.0",
-  "description": "CLI for bhai-lang",
+  "description": "CLI for bro-code",
   "source": "src/index.ts",
   "main": "bin/index.js",
   "bin": {
-    "bhailang": "./bin/index.js"
+    "brocode": "./bin/index.js"
   },
   "files": [
     "bin"
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DulLabs/bhai-lang.git"
+    "url": "git+https://github.com/ClaudeMaxUser/bro-code.git"
   },
   "keywords": [
     "programming",
     "language",
-    "bhai-lang",
+    "bro-code",
     "bl",
     "javascript",
     "typescript"
@@ -34,9 +34,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DulLabs/bhai-lang/issues"
+    "url": "https://github.com/ClaudeMaxUser/bro-code/issues"
   },
-  "homepage": "https://github.com/DulLabs/bhai-lang#readme",
+  "homepage": "https://github.com/ClaudeMaxUser/bro-code#readme",
   "devDependencies": {
     "ts-node": "^10.4.0",
     "ts-jest": "^27.1.2",
@@ -47,6 +47,6 @@
     "@types/jest": "^27.4.0",
     "config": "*",
     "tsconfig": "*",
-    "bhai-lang-interpreter": "*"
+    "bro-code-interpreter": "*"
   }
 }

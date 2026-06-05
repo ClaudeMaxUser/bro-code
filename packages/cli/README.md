@@ -29,7 +29,7 @@ bye bro
 <h4 align="left">Run</h4>
 
 ```
-bhailang test.bro
+brocode test.bro
 ```
 
 <h4 align="left">Output</h4>
