@@ -13,7 +13,7 @@ const Snippet = (props: Props) => {
       <div
         className="bg-editorBackground py-2 px-2 my-6 text-sm text-white documentation-code"
         dangerouslySetInnerHTML={{
-          __html: highlight(code, broCodeSyntax, "bhaiLang").replace(
+          __html: highlight(code, broCodeSyntax, "broCode").replace(
             new RegExp("\n", 'g'),
             "<br/>"
           ).replace(new RegExp('  ', 'g'), '&emsp;'),

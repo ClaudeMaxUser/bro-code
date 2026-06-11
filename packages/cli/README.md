@@ -17,7 +17,6 @@ npm i -g brocode
 
 
 <h4 align="left">Edit the file with a text editor.
-You can also try out your code on <a href="https://bhailang.js.org/#playground">Bro Code PlayGround</a></h4>
 
 ```
 hi bro

@@ -85,14 +85,14 @@ const Code = (props: Props) => {
           <button
             disabled={!code}
             onClick={executeCode}
-            className="mx-2 flex items-center justify-center px-8 border border-transparent text-base font-medium rounded-md text-white bg-bhagwa-600 hover:bg-bhagwa-700 md:text-lg md:px-10 my-4 sm:my-8 sm:py-3 disabled:opacity-40"
+            className="mx-2 flex items-center justify-center px-8 border border-transparent text-base font-medium rounded-md text-white bg-bro-600 hover:bg-bro-700 md:text-lg md:px-10 my-4 sm:my-8 sm:py-3 disabled:opacity-40"
           >
             Run
           </button>
 
           <button
             onClick={clearCode}
-            className="mx-2 flex items-center justify-center px-8 border border-transparent text-base font-medium rounded-md text-bhagwa-700 bg-bhagwa-300 hover:bg-bhagwa-400 md:text-lg md:px-10 my-4 sm:my-8 sm:py-3"
+            className="mx-2 flex items-center justify-center px-8 border border-transparent text-base font-medium rounded-md text-bro-700 bg-bro-300 hover:bg-bro-400 md:text-lg md:px-10 my-4 sm:my-8 sm:py-3"
           >
             Clear
           </button>

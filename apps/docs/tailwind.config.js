@@ -5,12 +5,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "bhagwa": {
-        700: "#ff421a",
-        600: "#FF5733",
-        500: "#ff9680",
-        400: "#ffc0b3",
-        300: "#ffeae5",
+
+        "bro": {
+          900: "#1e293b",
+          700: "#2563eb",
+          500: "#3b82f6",
+          400: "#60a5fa",
+          300: "#64748b",
         },
         "background": "#121121",
         "editorBackground": "#333",

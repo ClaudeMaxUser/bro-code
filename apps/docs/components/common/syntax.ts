@@ -25,4 +25,4 @@ export const broCodeSyntax = languages.extend("clike", {
     /[*/%^!=]=?|~|\+[=+]?|-[=-]?|\|[=|]?|&(?:=|&|\^=?)?|>(?:>=?|=)?|<(?:<=?|=|-)?|:=|\.\.\./,
 });
 
-Prism.languages.bhaiLang = broCodeSyntax;
+Prism.languages.broCode = broCodeSyntax;

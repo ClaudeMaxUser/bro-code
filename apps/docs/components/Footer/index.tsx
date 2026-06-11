@@ -7,7 +7,7 @@ const Footer = (props: Props) => {
     <footer>
       <div className="text-white text-sm text-center py-4">
         &copy; {new Date().getFullYear()}{" "}
-        <a className="hover:text-bhagwa-600" href="http://arijitbiswas.netlify.app/">
+        <a className="hover:text-bro-600" href="http://arijitbiswas.netlify.app/">
           Arijit Biswas
         </a>
       </div>
