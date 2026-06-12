@@ -10,7 +10,7 @@ export default function Docs() {
   return (
     <div className="bg-background">
       <Head>
-        <title>Bro-code - A toy programming language</title>
+        <title>Bro-code</title>
         <meta property="og:title" content="Bro-code - A toy programming language" key="title" />
         <meta property="og:type" content="website" key="type" />
         <meta property="og:description" content="Bro-code is a dynamically typed toy programming language, written in Typescript. Created by Arijit Biswas." key="description" />
