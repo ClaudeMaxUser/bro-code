@@ -17,7 +17,7 @@ const Terminal = (props: Props) => {
     ref={terminalRef}
       className={`${
         isSuccess !== null ? "terminal" : "terminal-collapsed"
-      } bg-black text-white my-6`}
+      } terminal-shell my-4`}
     >
       {isSuccess !== null && !isSuccess ? (
         <div className="text-red-700 output opacity-0">❌ Bruhh!!!</div>
@@ -28,7 +28,7 @@ const Terminal = (props: Props) => {
         return (
           <div
             key={i}
-            className={`${line.isError ? "text-red-500" : ""} output opacity-0`}
+            className={`${line.isError ? "terminal-line-error" : "terminal-line-ok"} output opacity-0 terminal-line`}
           >
             &gt; {line.value}
           </div>

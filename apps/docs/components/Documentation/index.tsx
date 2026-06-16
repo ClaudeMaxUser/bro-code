@@ -129,30 +129,27 @@ bye bro
 
 export default function Documentation() {
   return (
-    <div>
-      <div className="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
+    <section className="max-w-6xl mx-auto py-20 sm:py-24 px-4 sm:px-6 lg:px-8">
+      <div className="documentation-shell">
         <div>
-          <h2 className="text-3xl font-extrabold tracking-tight text-gray-100 sm:text-4xl">
-            Documentation
-          </h2>
-          <p className="mt-4 text-gray-300">
-            Bro-code is a dynamically typed toy programming language, based on an
-            inside joke, written in Typescript.
+          <h2 className="section-title">Examples & Docs</h2>
+          <p className="section-subtitle mt-3 max-w-2xl">
+            Bro-code is a dynamically typed toy language powered by a parser and interpreter written in Typescript. Use these examples as a quick map of the language.
           </p>
 
-          <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+          <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             {features.map((feature) => (
-              <div key={feature.name} className="border-t border-gray-200 pt-4">
-                <div className="font-medium text-gray-300">{feature.name}</div>
-                <div className="mt-2 text-sm text-gray-200">
+              <article key={feature.name} className="documentation-card">
+                <div className="documentation-card-title">{feature.name}</div>
+                <div className="mt-2 text-sm documentation-card-description leading-6">
                   {feature.description}
                 </div>
                 <Snippet code={feature.code} />
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

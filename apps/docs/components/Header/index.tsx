@@ -3,37 +3,40 @@ import BroCodeLogo from "./broLangLogo";
 
 export default function Header() {
   return (
-    <div className="relative overflow-hidden header flex justify-center items-center">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-left">
+    <header className="relative overflow-hidden header flex justify-center items-center">
+      <div className="max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div className="hero-shell">
+          <main className="mx-auto">
+            <div className="text-center">
               <h1 className="hidden">BroCode</h1>
-              <div className="p-4">
+              <div className="hero-badge inline-flex items-center rounded-full px-4 py-1 text-xs uppercase">
+                Toy language, real parser
+              </div>
+              <div className="p-4 sm:p-6">
                 <BroCodeLogo />
               </div>
-              <p className="mt-3 text-center text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                A toy programming language written in Typescript
+              <p className="hero-subtitle text-base sm:text-lg md:text-xl mx-auto">
+                A playful programming language written in Typescript with its own parser, interpreter, and CLI.
               </p>
-              <div className="prose text-center pt-4 pb-4">
-                {" "}
+              <div className="install-command mt-6 mx-auto">
+                <span className="install-command-prefix">Install</span>
                 <code className="language-js">npm i -g brocode</code>
               </div>
-              <div className="mt-5 sm:mt-8 sm:flex justify-center">
-                <div className="rounded-md shadow">
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <div className="rounded-xl shadow-lg shadow-black/30">
                   <a
                     href="#playground"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-bro-600 hover:bg-bro-700 md:py-4 md:text-lg md:px-10"
+                    className="hero-cta-primary"
                   >
-                    Playground
+                    Open Playground
                   </a>
                 </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
+                <div className="rounded-xl shadow-lg shadow-black/20">
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
                     href="https://github.com/ClaudeMaxUser/bro-code"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-bro-700 bg-bro-300 hover:bg-bro-400 md:py-4 md:text-lg md:px-10"
+                    className="hero-cta-secondary"
                   >
                     View Source
                   </a>
@@ -43,6 +46,6 @@ export default function Header() {
           </main>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

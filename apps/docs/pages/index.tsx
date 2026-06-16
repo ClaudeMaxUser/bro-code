@@ -8,7 +8,9 @@ import Header from "../components/Header";
 
 export default function Docs() {
   return (
-    <div className="bg-background">
+    <div className="docs-page bg-background text-white">
+      <div className="docs-grid" />
+      <div className="docs-gradient" />
       <Head>
         <title>Bro-code</title>
         <meta property="og:title" content="Bro-code - A toy programming language" key="title" />

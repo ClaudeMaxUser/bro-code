@@ -5,8 +5,6 @@ import { highlight } from "prismjs";
 
 import { broCodeSyntax } from "../../common/syntax";
 
-import "prismjs/themes/prism-tomorrow.css";
-
 
 const Editor = dynamic(() => import("react-simple-code-editor"), {
   ssr: false,
@@ -26,7 +24,7 @@ const CodeEditor = (props: Props) => {
       .join("\n");
 
   return (
-    <div className="playground-editor group">
+    <div className="playground-editor playground-editor-shell group rounded-2xl overflow-hidden">
       {/* Wrapping Editor component in a separate div to control its height and overflow */}
       <div className="editor-container">
         <Editor
@@ -38,8 +36,8 @@ const CodeEditor = (props: Props) => {
           className="editor"
           id="codeEditor"
           style={{
-            fontFamily: "monospace",
-            fontSize: 16,
+            fontFamily: "JetBrains Mono, Fira Code, ui-monospace, SFMono-Regular, Menlo, Monaco, monospace",
+            fontSize: 15,
           }}
         />
       </div>

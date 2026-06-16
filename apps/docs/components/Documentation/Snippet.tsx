@@ -10,8 +10,14 @@ const Snippet = (props: Props) => {
 
   return (
     <div className="relative snippet-container group">
+      <div className="snippet-topbar">
+        <span className="snippet-dot snippet-dot-red" />
+        <span className="snippet-dot snippet-dot-yellow" />
+        <span className="snippet-dot snippet-dot-green" />
+        <span className="snippet-filename">example.bro</span>
+      </div>
       <div
-        className="bg-editorBackground py-2 px-2 my-6 text-sm text-white documentation-code"
+        className="snippet-content documentation-code"
         dangerouslySetInnerHTML={{
           __html: highlight(code, broCodeSyntax, "broCode").replace(
             new RegExp("\n", 'g'),
@@ -19,7 +25,7 @@ const Snippet = (props: Props) => {
           ).replace(new RegExp('  ', 'g'), '&emsp;'),
         }}
       ></div>
-      <CopyToClipboard text={code} />
+      <CopyToClipboard text={code} className="snippet-copy-button" />
     </div>
   );
   

@@ -2,9 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 @import "prismjs/themes/prism-tomorrow.css";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+:root {
+	--surface-1: #0f1625;
+	--surface-2: #111b2d;
+	--surface-3: #18253c;
+	--line-soft: rgba(148, 163, 184, 0.22);
+	--text-main: #e5e7eb;
+	--text-muted: #b3bdcd;
+}
 
 html {
 	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Space Grotesk", "Segoe UI", sans-serif;
+	background: #0a101d;
+	color: var(--text-main);
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -17,24 +33,202 @@ html {
 	min-height: 70vh;
 }
 
+.docs-page {
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+}
+
+.docs-grid,
+.docs-gradient {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.docs-grid {
+	background-image: linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+	background-size: 44px 44px;
+	mask-image: radial-gradient(circle at 50% 30%, black 40%, transparent 75%);
+}
+
+.docs-gradient {
+	background:
+		radial-gradient(circle at 8% 12%, rgba(59, 130, 246, 0.2) 0%, transparent 42%),
+		radial-gradient(circle at 88% 5%, rgba(30, 41, 59, 0.5) 0%, transparent 40%),
+		radial-gradient(circle at 55% 80%, rgba(37, 99, 235, 0.12) 0%, transparent 46%);
+}
+
+.hero-shell {
+	border: 1px solid var(--line-soft);
+	background: linear-gradient(135deg, rgba(15, 22, 37, 0.92), rgba(17, 27, 45, 0.86));
+	border-radius: 1.5rem;
+	padding: 1.5rem;
+	backdrop-filter: blur(4px);
+	box-shadow: 0 32px 60px rgba(2, 6, 23, 0.48);
+	animation: rise-in 500ms ease-out;
+}
+
+.hero-subtitle {
+	color: var(--text-muted);
+	max-width: 44rem;
+	line-height: 1.7;
+}
+
+.hero-badge {
+	border: 1px solid rgba(96, 165, 250, 0.28);
+	background: rgba(2, 6, 23, 0.3);
+	color: #93c5fd;
+	letter-spacing: 0.18em;
+}
+
+.install-command {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+	border-radius: 0.75rem;
+	border: 1px solid rgba(100, 116, 139, 0.45);
+	background: rgba(2, 6, 23, 0.45);
+	font-family: "JetBrains Mono", "Fira Code", monospace;
+	font-size: 0.9rem;
+}
+
+.install-command-prefix {
+	color: #94a3b8;
+	text-transform: uppercase;
+	font-size: 0.68rem;
+	letter-spacing: 0.14em;
+}
+
+.hero-cta-primary,
+.hero-cta-secondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.78rem 1.45rem;
+	border-radius: 0.7rem;
+	font-weight: 600;
+	font-size: 0.97rem;
+	transition: transform 150ms ease, background-color 150ms ease, color 150ms ease;
+}
+
+.hero-cta-primary {
+	background-color: #2563eb;
+	color: #f8fafc;
+}
+
+.hero-cta-primary:hover {
+	background-color: #1d4ed8;
+	transform: translateY(-1px);
+}
+
+.hero-cta-secondary {
+	background-color: #cbd5e1;
+	color: #0f172a;
+}
+
+.hero-cta-secondary:hover {
+	background-color: #94a3b8;
+	transform: translateY(-1px);
+}
+
+.section-title {
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	line-height: 1.15;
+}
+
+.section-subtitle {
+	color: var(--text-muted);
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+.playground-shell,
+.documentation-shell {
+	border: 1px solid var(--line-soft);
+	background: linear-gradient(160deg, rgba(17, 27, 45, 0.86), rgba(15, 22, 37, 0.86));
+	border-radius: 1.3rem;
+	padding: 1.1rem;
+	box-shadow: 0 26px 42px rgba(2, 6, 23, 0.32);
+}
+
+.playground-chip {
+	padding: 0.42rem 0.75rem;
+	border: 1px solid rgba(100, 116, 139, 0.5);
+	border-radius: 999px;
+	font-size: 0.82rem;
+	color: #cbd5e1;
+	background: rgba(15, 23, 42, 0.65);
+	transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+}
+
+.playground-chip:hover {
+	border-color: #60a5fa;
+	color: #dbeafe;
+	background: rgba(30, 64, 175, 0.2);
+}
+
+.playground-action-primary,
+.playground-action-secondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.65rem 1.15rem;
+	border-radius: 0.7rem;
+	font-size: 0.9rem;
+	font-weight: 600;
+	border: 1px solid transparent;
+	transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.playground-action-primary {
+	background: #2563eb;
+	color: #f8fafc;
+}
+
+.playground-action-primary:hover {
+	background: #1d4ed8;
+	transform: translateY(-1px);
+}
+
+.playground-action-secondary {
+	background: #cbd5e1;
+	color: #0f172a;
+}
+
+.playground-action-secondary:hover {
+	background: #94a3b8;
+	transform: translateY(-1px);
+}
+
 .playground-editor{
 	position: relative;
 }
 
+.playground-editor-shell {
+	border: 1px solid rgba(100, 116, 139, 0.42);
+	background: #12161f;
+}
+
 .editor-container {
-	height: 60vh;
+	height: min(56vh, 620px);
 	overflow: auto;
 	tab-size: 4ch;
 	color: #fff;
-	background-color: #333;
+	background: linear-gradient(180deg, #0f172a 0%, #0b1220 100%);
 }
 
 .editorLineNumber {
 	position: absolute;
-	left: 0px;
-	color: #8a8a8a;
+	left: 0;
+	color: #64748b;
 	text-align: right;
-	width: 40px;
+	width: 52px;
 }
 
 .editor {
@@ -42,7 +236,9 @@ html {
 }
 
 .editor pre{
-	padding-left: 5rem !important;
+	padding-left: 5.5rem !important;
+	padding-top: 1.1rem;
+	padding-bottom: 1.3rem;
 	height: 100%
 }
 
@@ -50,27 +246,61 @@ html {
 	overflow-wrap: normal !important;
 	word-break: keep-all !important;
 	outline: none;
-	padding-top: 1rem;
-	padding-left: 5rem !important;
-	/* z-index: 999999999; */
+	padding-top: 1.1rem;
+	padding-left: 5.5rem !important;
 	white-space: nowrap;
 }
 
 .terminal {
   overflow-y: scroll;
   transition-property: max-height, padding; 
-	transition-duration: 0.2s;
+	transition-duration: 0.24s;
 	transition-timing-function: ease-in-out;
   height:auto;
   max-height: 30rem;
-	padding: 2rem;
+	padding: 1.1rem;
 	opacity: 1;
 }
 
 .terminal .output{
 	opacity: 1;
 	transition: opacity 0.5s;
-	transition-delay: 0.3s;
+	transition-delay: 0.2s;
+}
+
+.terminal-shell {
+	border-radius: 0.95rem;
+	border: 1px solid rgba(100, 116, 139, 0.35);
+	background: #050b16;
+	font-family: "JetBrains Mono", "Fira Code", monospace;
+	font-size: 0.88rem;
+}
+
+.terminal-status {
+	font-weight: 600;
+	margin-bottom: 0.7rem;
+	padding-bottom: 0.6rem;
+	border-bottom: 1px dashed rgba(100, 116, 139, 0.38);
+}
+
+.terminal-line {
+	line-height: 1.65;
+}
+
+.terminal-status-error {
+	color: #f87171;
+}
+
+.terminal-status-ok {
+	color: #34d399;
+}
+
+.terminal-line-error {
+	color: #fca5a5;
+}
+
+.terminal-line-ok {
+	color: #e2e8f0;
 }
 
 .terminal-collapsed {
@@ -82,7 +312,97 @@ html {
 }
 
 .documentation-code {
-  font-family: monospace;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+.documentation-card {
+	border: 1px solid rgba(100, 116, 139, 0.35);
+	border-radius: 1rem;
+	padding: 1rem;
+	background: linear-gradient(180deg, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.52));
+	transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.documentation-card:hover {
+	transform: translateY(-2px);
+	border-color: rgba(96, 165, 250, 0.45);
+}
+
+.documentation-card-title {
+	font-size: 1.05rem;
+	font-weight: 600;
+	color: #e2e8f0;
+}
+
+.documentation-card-description {
+	color: #cbd5e1;
+}
+
+.snippet-topbar {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.55rem 0.75rem;
+	border: 1px solid rgba(71, 85, 105, 0.55);
+	border-bottom: 0;
+	border-radius: 0.7rem 0.7rem 0 0;
+	background: #111827;
+	margin-top: 1rem;
+}
+
+.snippet-dot {
+	width: 0.6rem;
+	height: 0.6rem;
+	border-radius: 9999px;
+	display: inline-block;
+}
+
+.snippet-dot-red {
+	background: #ef4444;
+}
+
+.snippet-dot-yellow {
+	background: #f59e0b;
+}
+
+.snippet-dot-green {
+	background: #10b981;
+}
+
+.snippet-filename {
+	margin-left: 0.4rem;
+	font-size: 0.74rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: #94a3b8;
+}
+
+.snippet-content {
+	background: #0b1220;
+	padding: 0.95rem;
+	margin-bottom: 0.5rem;
+	font-size: 0.84rem;
+	line-height: 1.7;
+	color: #f8fafc;
+	border: 1px solid rgba(71, 85, 105, 0.55);
+	border-radius: 0 0 0.7rem 0.7rem;
+	overflow-x: auto;
+}
+
+.snippet-copy-button {
+	top: 0.35rem;
+	right: 0.45rem;
+	padding: 0.35rem;
+	opacity: 0.9;
+	z-index: 2;
+}
+
+@media (min-width: 640px) {
+	.snippet-copy-button {
+		top: 0.4rem;
+		right: 0.55rem;
+		padding: 0.4rem;
+	}
 }
 
 .copied-text::after {
@@ -96,4 +416,66 @@ html {
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-left: 8px solid #666;
+}
+
+.copy-button {
+	border-color: #475569;
+	color: #cbd5e1;
+	background: rgba(15, 23, 42, 0.8);
+	opacity: 0.75;
+}
+
+.group:hover .copy-button {
+	opacity: 1;
+}
+
+.copy-button:hover {
+	background: rgba(30, 41, 59, 0.95);
+}
+
+.copy-button-success {
+	border-color: #60a5fa;
+	color: #60a5fa;
+}
+
+.copied-text-bubble {
+	background: #334155;
+}
+
+.footer-inner {
+	color: #cbd5e1;
+	border-top: 1px solid rgba(71, 85, 105, 0.6);
+}
+
+@keyframes rise-in {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 768px) {
+	.hero-shell,
+	.playground-shell,
+	.documentation-shell {
+		padding: 0.9rem;
+		border-radius: 1rem;
+	}
+
+	.editor-container {
+		height: min(50vh, 520px);
+	}
+
+	.codeArea,
+	.editor pre {
+		padding-left: 4.2rem !important;
+	}
+
+	.editorLineNumber {
+		width: 40px;
+	}
 }

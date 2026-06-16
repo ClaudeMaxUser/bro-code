@@ -30,6 +30,56 @@ hi bro
 bye bro
 `;
 
+const playgroundTemplates = [
+  {
+    label: "FizzBuzz-ish",
+    code: `hi bro
+  bro this is n = 1;
+  while bro (n <= 15) {
+    if bro (n % 15 == 0) {
+      say bro "fizzbuzz";
+    } else if bro (n % 3 == 0) {
+      say bro "fizz";
+    } else if bro (n % 5 == 0) {
+      say bro "buzz";
+    } else bro {
+      say bro n;
+    }
+    n += 1;
+  }
+bye bro
+`,
+  },
+  {
+    label: "Condition Flow",
+    code: `hi bro
+  bro this is score = 82;
+  if bro (score >= 90) {
+    say bro "grade A";
+  } else if bro (score >= 75) {
+    say bro "grade B";
+  } else bro {
+    say bro "grade C";
+  }
+bye bro
+`,
+  },
+  {
+    label: "Loop + Continue",
+    code: `hi bro
+  bro this is a = 0;
+  while bro (a < 8) {
+    a += 1;
+    if bro (a == 4) {
+      next bro;
+    }
+    say bro a;
+  }
+bye bro
+`,
+  },
+];
+
 const Code = (props: Props) => {
   const {} = props;
   const [code, setCode] = useState(initialCode);
@@ -75,32 +125,56 @@ const Code = (props: Props) => {
     setOutput([]);
   };
 
+  const loadTemplate = (template: string) => {
+    setCode(template);
+    setIsSuccess(null);
+    setOutput([]);
+  };
+
   return (
-    <div id="playground" className="mx-4 sm:mx-12">
-      <div className="sm:flex justify-between items-center">
-        <h2 className="text-3xl font-extrabold tracking-tight text-gray-100 sm:text-4xl my-4">
-          Playground
-        </h2>
-        <div className="flex">
+    <section id="playground" className="mx-4 sm:mx-10 lg:mx-14 mt-4 sm:mt-8">
+      <div className="playground-shell">
+        <div className="sm:flex justify-between items-start sm:items-center gap-4 mb-6">
+          <div>
+            <h2 className="section-title">Playground</h2>
+            <p className="section-subtitle mt-2">
+              Run Bro-code snippets instantly and inspect output in the embedded terminal.
+            </p>
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            {playgroundTemplates.map((template) => (
+              <button
+                key={template.label}
+                onClick={() => loadTemplate(template.code)}
+                className="playground-chip"
+              >
+                {template.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-2 justify-end mb-4">
           <button
             disabled={!code}
             onClick={executeCode}
-            className="mx-2 flex items-center justify-center px-8 border border-transparent text-base font-medium rounded-md text-white bg-bro-600 hover:bg-bro-700 md:text-lg md:px-10 my-4 sm:my-8 sm:py-3 disabled:opacity-40"
+            className="playground-action-primary disabled:opacity-40"
           >
             Run
           </button>
 
           <button
             onClick={clearCode}
-            className="mx-2 flex items-center justify-center px-8 border border-transparent text-base font-medium rounded-md text-bro-700 bg-bro-300 hover:bg-bro-400 md:text-lg md:px-10 my-4 sm:my-8 sm:py-3"
+            className="playground-action-secondary"
           >
             Clear
           </button>
         </div>
+
+        <CodeEditor handleChange={handleChange} code={code} />
+        <Terminal output={output} isSuccess={isSuccess} />
       </div>
-      <CodeEditor handleChange={handleChange} code={code} />
-      <Terminal output={output} isSuccess={isSuccess} />
-    </div>
+    </section>
   );
 };
 type Props = {};
