@@ -1,7 +1,7 @@
 [build]
-  base = "apps/docs"
-  command = "npm run build"
-  publish = "out"
+  base = "."
+  command = "npm run build --workspace=bro-code-docs"
+  publish = "apps/docs/out"
 
 [build.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
