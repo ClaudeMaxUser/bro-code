@@ -18,10 +18,10 @@ export default function Header() {
               <p className="hero-subtitle text-base sm:text-lg md:text-xl mx-auto">
                 A playful programming language written in Typescript with its own parser, interpreter, and CLI.
               </p>
-              <div className="install-command mt-6 mx-auto">
+              {/* <div className="install-command mt-6 mx-auto">
                 <span className="install-command-prefix">Install</span>
                 <code className="language-js">npm i -g brocode</code>
-              </div>
+              </div> */}
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <div className="rounded-xl shadow-lg shadow-black/30">
                   <a
@@ -35,7 +35,7 @@ export default function Header() {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/ClaudeMaxUser/bro-code"
+                    href="https://github.com/ClaudeMaxUser/broo-code"
                     className="hero-cta-secondary"
                   >
                     View Source

@@ -2,20 +2,22 @@
 
 Bro code is a toy programming language written in TypeScript.
 
+This repository is private. The public way to use Bro code is the web playground.
+
+- Website: https://broo-code.netlify.app/
+- Direct playground section: https://broo-code.netlify.app//#playground
+
+## Why this README exists
+
+This README is designed to be publicly visible while the source repository remains private.
+It documents the language, architecture, and technical approach without exposing internal-only details.
+
 ## Project status
 
-- This repository is private.
-- The project is not distributed through npm.
-- The public way to use Bro code is the playground.
+- The source repository is private.
+- The project is currently not distributed via npm.
 
-## Playground
-
-- Website: https://brocode.js.org
-- Direct playground section: https://brocode.js.org/#playground
-
-You can write and run Bro code snippets directly in the browser.
-
-## Language quick start
+## Quick start (language)
 
 Minimal program:
 
@@ -193,10 +195,121 @@ hi bro
 bye bro
 ```
 
+## Architecture overview
+
+Bro code follows a modular pipeline:
+
+1. Tokenizer converts source code into tokens from grammar spec.
+2. Parser builds an AST from the token stream.
+3. Interpreter evaluates AST nodes using node-type visitors.
+4. Playground (web app) runs code in-browser via interpreter package.
+
+```mermaid
+flowchart LR
+  A[Bro code source] --> B[Tokenizer]
+  B --> C[Parser]
+  C --> D[AST]
+  D --> E[Interpreter visitors]
+  E --> F[Runtime output]
+```
+
+### Monorepo layout
+
+- `apps/docs`: Next.js docs + playground UI.
+- `packages/parser`: grammar, tokenizer, parser, AST node definitions.
+- `packages/interpreter`: runtime evaluator and scope handling.
+- `packages/cli`: command-line entrypoint for local file execution.
+- `packages/config`: shared ESLint config package.
+- `packages/tsconfig`: shared TypeScript config package.
+
+## Technical details
+
+### Core design choices
+
+- Language implementation is fully in TypeScript.
+- Parser and interpreter are separated into independent packages.
+- Interpreter uses visitor dispatch by AST node type.
+- Runtime scope is reset after each interpretation cycle.
+- Turborepo manages builds, tests, and package orchestration.
+
+### Runtime characteristics
+
+- Dynamically typed runtime semantics.
+- Block-scoped variable behavior.
+- Explicit runtime exceptions for invalid operations.
+- Control flow support for conditional branches and loops.
+
+## Local development
+
+### Prerequisites
+
+- Node.js >= 18
+- npm >= 7
+
+### Install
+
+```bash
+npm install
+```
+
+### Common scripts (repo root)
+
+```bash
+npm run dev
+npm run build
+npm run test
+npm run lint
+npm run format
+```
+
+Notes:
+
+- `dev` and `test` run in parallel across workspaces.
+- `build` uses Turborepo pipeline and package dependencies.
+
+## Testing
+
+- Parser package uses Jest with coverage.
+- Interpreter package uses Jest with coverage.
+- Integration and negative/positive test providers are included.
+
+Run all tests from root:
+
+```bash
+npm run test
+```
+
+## Playground and deployment
+
+- Playground app is in `apps/docs`.
+- Static export is produced by Next.js build.
+- Netlify deploy publishes from `apps/docs/out`.
+
+## Public README checklist for private-source projects
+
+If this README is public while source remains private, include these sections:
+
+- Purpose and project status.
+- Feature/language overview with examples.
+- High-level architecture and execution flow.
+- Technical stack and runtime model.
+- How to use the product publicly (playground links).
+- Local setup instructions (if collaborators have access).
+- Testing approach and quality signals.
+- Deployment target and operations notes (high level).
+- License and contact/reporting path.
+
+Avoid exposing:
+
+- Internal endpoints, secrets, and private infra details.
+- Internal branch strategy or CI tokens.
+- Any unreleased private roadmap details that should stay confidential.
+
+
 ## Public links
 
-- Playground and docs: https://brocode.js.org
-- Playground section: https://brocode.js.org/#playground
+- Playground and docs: https://broo-code.netlify.app/
+- Playground section: https://broo-code.netlify.app//#playground
 
 ## License
 
