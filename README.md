@@ -8,12 +8,6 @@ Bro-code is a toy programming language written in TypeScript with its own custom
 
 - **Website / Docs**: [brocode.js.org](https://brocode.js.org/)
 - **Interactive Web Playground**: [brocode.js.org/#playground](https://brocode.js.org/#playground)
-
-## Why this README exists
-
-This README is designed to be publicly visible while the source repository remains private.
-It documents the language, grammar, architecture, and technical approach.
-
 ## Quick start (language)
 
 Minimal program:
@@ -236,7 +230,41 @@ flowchart LR
 - Explicit runtime exceptions for invalid operations.
 - Control flow support for conditional branches and loops.
 
-## Public links
+## Local development
+
+### Prerequisites
+
+- Node.js >= 18
+- npm >= 7
+
+### Installation
+
+```bash
+git clone https://github.com/ClaudeMaxUser/bro-code.git
+cd bro-code
+npm install
+```
+
+### Scripts
+
+```bash
+# Start local docs & playground development server
+npm run dev
+
+# Run all test suites across packages
+npm run test
+
+# Lint all workspaces
+npm run lint
+
+# Build all packages & export docs site
+npm run build
+
+# Format code with Prettier
+npm run format
+```
+
+## Links
 
 - **Website & Documentation**: [https://brocode.js.org/](https://brocode.js.org/)
 - **Interactive Playground**: [https://brocode.js.org/#playground](https://brocode.js.org/#playground)
