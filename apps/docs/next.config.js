@@ -3,10 +3,23 @@
 // https://nextjs.org/docs/api-reference/next.config.js/introduction
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
-const { withSentryConfig } = require('@sentry/nextjs');
+const { withSentryConfig } = require("@sentry/nextjs");
+
+const isProd = process.env.NODE_ENV === "production";
 
 const moduleExports = {
-  // Your existing module.exports
+  basePath:
+    process.env.NEXT_PUBLIC_BASE_PATH !== undefined
+      ? process.env.NEXT_PUBLIC_BASE_PATH
+      : isProd
+      ? "/bro-code"
+      : "",
+  assetPrefix:
+    process.env.NEXT_PUBLIC_BASE_PATH !== undefined
+      ? process.env.NEXT_PUBLIC_BASE_PATH
+      : isProd
+      ? "/bro-code"
+      : "",
 };
 
 const sentryWebpackPluginOptions = {
@@ -23,6 +36,6 @@ const sentryWebpackPluginOptions = {
 
 // Make sure adding Sentry options is the last code to run before exporting, to
 // ensure that your source maps include changes from all other Webpack plugins
-module.exports = process.env.SENTRY_AUTH_TOKEN ?
-  withSentryConfig(moduleExports, sentryWebpackPluginOptions) :
-  moduleExports;
+module.exports = process.env.SENTRY_AUTH_TOKEN
+  ? withSentryConfig(moduleExports, sentryWebpackPluginOptions)
+  : moduleExports;

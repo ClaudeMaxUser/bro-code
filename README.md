@@ -6,8 +6,9 @@
 
 Bro-code is a toy programming language written in TypeScript with its own custom tokenizer, recursive-descent parser, AST, and tree-walking interpreter.
 
-- **Website / Docs**: [brocode.js.org](https://brocode.js.org/)
-- **Interactive Web Playground**: [brocode.js.org/#playground](https://brocode.js.org/#playground)
+- **Website / Docs**: [https://ClaudeMaxUser.github.io/bro-code/](https://ClaudeMaxUser.github.io/bro-code/)
+- **Interactive Web Playground**: [https://ClaudeMaxUser.github.io/bro-code/#playground](https://ClaudeMaxUser.github.io/bro-code/#playground)
+
 ## Quick start (language)
 
 Minimal program:
@@ -266,8 +267,8 @@ npm run format
 
 ## Links
 
-- **Website & Documentation**: [https://brocode.js.org/](https://brocode.js.org/)
-- **Interactive Playground**: [https://brocode.js.org/#playground](https://brocode.js.org/#playground)
+- **Website & Documentation**: [https://ClaudeMaxUser.github.io/bro-code/](https://ClaudeMaxUser.github.io/bro-code/)
+- **Interactive Playground**: [https://ClaudeMaxUser.github.io/bro-code/#playground](https://ClaudeMaxUser.github.io/bro-code/#playground)
 - **GitHub Repository**: [https://github.com/ClaudeMaxUser/bro-code](https://github.com/ClaudeMaxUser/bro-code)
 
 ## License
