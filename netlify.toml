@@ -1,7 +1,0 @@
-[build]
-  base = "."
-  command = "npx turbo run build --scope=bro-code-docs --include-dependencies"
-  publish = "apps/docs/out"
-
-[build.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
