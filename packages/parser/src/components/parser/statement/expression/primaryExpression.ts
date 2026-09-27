@@ -20,13 +20,13 @@ export default class PrimaryExpression extends Expression {
       case TokenTypes.BOOLEAN_TYPE:
         return Literal.getLiteralImpl(token.type).getLiteral();
       case TokenTypes.NULL_LITERAL_TYPE:
-        return this._getNallaLiteral();
+        return this._getNullLiteral();
       default:
         return this._getLeftHandSideExpression();
     }
   }
 
-  private _getNallaLiteral() {
+  private _getNullLiteral() {
     this._tokenExecutor.eatTokenAndForwardLookahead(TokenTypes.NULL_LITERAL_TYPE);
     return Literal.getLiteralImpl(TokenTypes.NULL_LITERAL_TYPE).getLiteral();
   }

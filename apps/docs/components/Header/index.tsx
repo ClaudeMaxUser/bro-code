@@ -1,4 +1,4 @@
-import BroCodeLogo from "./broLangLogo";
+import BroCodeLogo from "./broCodeLogo";
 
 export default function Header() {
   return (
