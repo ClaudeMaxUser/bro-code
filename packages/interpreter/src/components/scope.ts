@@ -45,7 +45,7 @@ export default class Scope {
       return this._parentScope.get(identifier);
     }
 
-    throw new RuntimeException(`Variable "${identifier}" bana to le pehle.`);
+    throw new RuntimeException(`Variable "${identifier}" must be declared first bro.`);
   }
 
   assign(identifier: string, value: unknown) {

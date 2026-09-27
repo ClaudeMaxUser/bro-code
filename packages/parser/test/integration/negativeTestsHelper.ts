@@ -65,7 +65,7 @@ export const NegativeStatementTests = [
     input: `
         hi bro
         {
-          naam = 4
+          name = 4
         }
         bye bro
       `,

@@ -70,11 +70,11 @@ export const StatementTests = [
     input: `
       hi bro;
       {
-        naam = 4;
+        name = 4;
       }
       bye bro;
     `,
-    output: `{\"type\":\"Program\",\"body\":{\"type\":\"InitStatement\",\"body\":[{\"type\":\"BlockStatement\",\"body\":[{\"type\":\"ExpressionStatement\",\"expression\":{\"type\":\"AssignmentExpression\",\"operator\":\"=\",\"left\":{\"type\":\"IdentifierExpression\",\"name\":\"naam\"},\"right\":{\"type\":\"NumericLiteral\",\"value\":4}}}]}]}}`,
+    output: `{\"type\":\"Program\",\"body\":{\"type\":\"InitStatement\",\"body\":[{\"type\":\"BlockStatement\",\"body\":[{\"type\":\"ExpressionStatement\",\"expression\":{\"type\":\"AssignmentExpression\",\"operator\":\"=\",\"left\":{\"type\":\"IdentifierExpression\",\"name\":\"name\"},\"right\":{\"type\":\"NumericLiteral\",\"value\":4}}}]}]}}`,
   },
   {
     name: "block statement test with variable statement inside, should success",
@@ -489,19 +489,19 @@ export const ExpressionsTests = [
     name: `identifier name starting with "yep", should success`,
     input: `
       hi bro
-      bro this is sahiValue = yep;
+      bro this is yepValue = yep;
       bye bro
     `,
-    output: `{"type":"Program","body":{"type":"InitStatement","body":[{"type":"VariableStatement","declarations":[{"type":"VariableDeclaration","id":{"type":"IdentifierExpression","name":"sahiValue"},"init":{"type":"BooleanLiteral","value":"yep"}}]}]}}`,
+    output: `{"type":"Program","body":{"type":"InitStatement","body":[{"type":"VariableStatement","declarations":[{"type":"VariableDeclaration","id":{"type":"IdentifierExpression","name":"yepValue"},"init":{"type":"BooleanLiteral","value":"yep"}}]}]}}`,
   },
   {
     name: `identifier name starting with "nah", should success`,
     input: `
       hi bro
-      bro this is galatValue = 10;
+      bro this is nahValue = 10;
       bye bro
     `,
-    output: `{"type":"Program","body":{"type":"InitStatement","body":[{"type":"VariableStatement","declarations":[{"type":"VariableDeclaration","id":{"type":"IdentifierExpression","name":"galatValue"},"init":{"type":"NumericLiteral","value":10}}]}]}}`,
+    output: `{"type":"Program","body":{"type":"InitStatement","body":[{"type":"VariableStatement","declarations":[{"type":"VariableDeclaration","id":{"type":"IdentifierExpression","name":"nahValue"},"init":{"type":"NumericLiteral","value":10}}]}]}}`,
   },
 ];
 
