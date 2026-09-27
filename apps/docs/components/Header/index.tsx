@@ -1,6 +1,5 @@
 import BroCodeLogo from "./broLangLogo";
 
-
 export default function Header() {
   return (
     <header className="relative overflow-hidden header flex justify-center items-center">
@@ -16,7 +15,8 @@ export default function Header() {
                 <BroCodeLogo />
               </div>
               <p className="hero-subtitle text-base sm:text-lg md:text-xl mx-auto">
-                A playful programming language written in Typescript with its own parser, interpreter, and CLI.
+                A playful programming language written in Typescript with its
+                own parser, interpreter, and CLI.
               </p>
               {/* <div className="install-command mt-6 mx-auto">
                 <span className="install-command-prefix">Install</span>
@@ -24,10 +24,7 @@ export default function Header() {
               </div> */}
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <div className="rounded-xl shadow-lg shadow-black/30">
-                  <a
-                    href="#playground"
-                    className="hero-cta-primary"
-                  >
+                  <a href="#playground" className="hero-cta-primary">
                     Open Playground
                   </a>
                 </div>
@@ -35,7 +32,7 @@ export default function Header() {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://github.com/ClaudeMaxUser/broo-code"
+                    href="https://github.com/ClaudeMaxUser/bro-code"
                     className="hero-cta-secondary"
                   >
                     View Source

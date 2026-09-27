@@ -1,16 +1,18 @@
-# Broo-code
+# Bro-code
 
-Bro code is a toy programming language written in TypeScript.
+[![Deploy to GitHub Pages](https://github.com/ClaudeMaxUser/bro-code/actions/workflows/deploy.yml/badge.svg)](https://github.com/ClaudeMaxUser/bro-code/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-This repository is private. The public way to use Bro code is the web playground.
+Bro-code is a toy programming language written in TypeScript with its own custom tokenizer, recursive-descent parser, AST, and tree-walking interpreter.
 
-- Website:
-- Direct playground section:
+- **Website / Docs**: [brocode.js.org](https://brocode.js.org/)
+- **Interactive Web Playground**: [brocode.js.org/#playground](https://brocode.js.org/#playground)
 
 ## Why this README exists
 
 This README is designed to be publicly visible while the source repository remains private.
-It documents the language, architecture, and technical approach without exposing internal-only details.
+It documents the language, grammar, architecture, and technical approach.
 
 ## Quick start (language)
 
@@ -236,8 +238,9 @@ flowchart LR
 
 ## Public links
 
-- Playground and docs: https://broo-code.netlify.app/
-- Playground section: https://broo-code.netlify.app//#playground
+- **Website & Documentation**: [https://brocode.js.org/](https://brocode.js.org/)
+- **Interactive Playground**: [https://brocode.js.org/#playground](https://brocode.js.org/#playground)
+- **GitHub Repository**: [https://github.com/ClaudeMaxUser/bro-code](https://github.com/ClaudeMaxUser/bro-code)
 
 ## License
 

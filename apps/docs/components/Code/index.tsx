@@ -7,7 +7,6 @@ import { sendEvents } from "../../helpers";
 import CodeEditor from "./CodeEditor";
 import Terminal from "./Terminal";
 
-
 const initialCode = `
 hi bro
  say bro "Hello World";
@@ -78,13 +77,28 @@ bye bro
 bye bro
 `,
   },
+  {
+    label: "Scope & Shadowing",
+    code: `hi bro
+  bro this is count = 100;
+  say bro "global count:", count;
+
+  {
+    bro this is count = 42;
+    say bro "block-scoped count:", count;
+  }
+
+  say bro "original count:", count;
+bye bro
+`,
+  },
 ];
 
 const Code = (props: Props) => {
   const {} = props;
   const [code, setCode] = useState(initialCode);
   const [output, setOutput] = useState<{ value: string; isError: boolean }[]>(
-    []
+    [],
   );
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 
@@ -111,7 +125,7 @@ const Code = (props: Props) => {
       }
     }
 
-    sendEvents("CodeExecuted", {success: isExecusionSuccess});
+    sendEvents("CodeExecuted", { success: isExecusionSuccess });
 
     setIsSuccess(isExecusionSuccess);
     setOutput(outputList);
@@ -138,7 +152,8 @@ const Code = (props: Props) => {
           <div>
             <h2 className="section-title">Playground</h2>
             <p className="section-subtitle mt-2">
-              Run Bro-code snippets instantly and inspect output in the embedded terminal.
+              Run Bro-code snippets instantly and inspect output in the embedded
+              terminal.
             </p>
           </div>
           <div className="flex gap-2 flex-wrap">
@@ -163,10 +178,7 @@ const Code = (props: Props) => {
             Run
           </button>
 
-          <button
-            onClick={clearCode}
-            className="playground-action-secondary"
-          >
+          <button onClick={clearCode} className="playground-action-secondary">
             Clear
           </button>
         </div>
